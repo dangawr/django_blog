@@ -2,21 +2,21 @@
 {% load static %}
 
 {% block css %}
-    <link href="{% static 'blog/post.css' %}" rel="stylesheet">
-    <link href="{% static 'blog/all-posts.css' %}" rel="stylesheet">
+<link href="{% static 'blog/post.css' %}" rel="stylesheet">
+<link href="{% static 'blog/all-posts.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}
-    My all posts
+My all posts
 {% endblock %}
 
 {% block content %}
-    <section id="all-posts">
-        <h2>My Collected Posts</h2>
-        <ul>
-            {% for post in posts %}
-                {% include "blog/includes/post.html" %}
-            {% endfor %}
-        </ul>
-    </section>
+<section id="all-posts">
+    <h2>My Collected Posts</h2>
+    <ul>
+        {% for post in posts %}
+        {% include "blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
 {% endblock %}
