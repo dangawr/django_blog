@@ -81,7 +81,7 @@ main {
   max-width: 90rem;
   margin: 3rem auto;
   background-color: white;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
@@ -91,6 +91,16 @@ main {
   color: #390281;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+}
+
+#login {
+  margin: 6rem auto;
+  width: 90%;
+  max-width: 40rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
 }
 
 #comment-form {
@@ -201,6 +211,15 @@ main {
 
 #comments h2 {
   color: #464646;
+}
+
+#comments h3 {
+  color: #464646;
+  margin: auto auto 0;
+}
+
+#comments time {
+  font-size: 0.75rem;
 }
 
 #read-later {

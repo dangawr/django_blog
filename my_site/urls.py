@@ -22,5 +22,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \ #commented cuz 2nd method to serve static/files
-  #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('accounts/', include('django.contrib.auth.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

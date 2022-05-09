@@ -9,12 +9,13 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import os
+
 from pathlib import Path
 from os import getenv
 from dotenv import load_dotenv
 
 load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = getenv("SECRET_KEY")
+SECRET_KEY = "django-insecure-&a(zl+eg573%z3*#0&pe_q%t6-x7@!p7&j7rqr$7^u+p5jmy#7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv("IS_DEVELOPMENT", True)
@@ -38,7 +39,6 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'blog',
-    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': getenv("DB_USER"),
-        'PASSWORD': getenv("DB_PASSWORD"),
-        'HOST': getenv("DB_HOST"),
-        'PORT': getenv("DB_PORT"),
+        'USER': 'sloniupython',
+        'PASSWORD': 'Lemon!23',
+        'HOST': 'sloniupython.cgggahnfdp2t.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -145,15 +145,4 @@ MEDIA_ROOT = BASE_DIR / 'uploads'
 
 MEDIA_URL = "media/images/"
 
-AWS_STORAGE_BUCKET_NAME = getenv("STORAGE_BUCKET_NAME")
-AWS_S3_REGION_NAME = getenv("S3_REGION_NAME")
-AWS_ACCESS_KEY_ID = getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = getenv("AWS_SECRET_ACCESS_KEY")
-
-AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
-
-STATICFILES_FOLDER = "static"
-MEDIAFILES_FOLDER = "media"
-
-STATICFILES_STORAGE = 'custom_storages.StaticFilesStorage'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaFileStorage'
+LOGIN_REDIRECT_URL = '/'

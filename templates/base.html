@@ -12,6 +12,12 @@
 <header id="main-navigation">
     <h1><a href="{% url 'starting-page' %}">Daniel's blog</a></h1>
     <nav>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}?next={{request.path}}">Log out</a>
+        {% else %}
+        <a href="{% url 'login' %}">Log in</a>
+        <a href="{% url 'signup' %}">Register</a>
+        {% endif %}
         <a href="{% url 'read-later' %}">Read later</a>
         <a href="{% url 'posts-page' %}">All Posts</a>
     </nav>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -34,7 +35,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    user_name = models.CharField(max_length=100)
-    e_mail = models.EmailField()
+    # user_name = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    # e_mail = models.EmailField()
     text = models.TextField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    date = models.DateTimeField(auto_now=True)
